@@ -1,19 +1,53 @@
 class Main {
   public static void main(String[] args)
   {
-    String conversion = args[0];
-    String value = args[1];
+    String conversion = "DollarToEuro";
+    String value = "1000";
 
     /*
      * TODO
      *
      * use desired conversion here
      *
+     * CurrencyConverter
+     *
+     *   DollarToEuro
+     *   EuroToDoller
+     *   PoundToEuro
+     *   EuroToPound
+     *
+     *
+     * LengthConverter
+     *
+     *   MetersToMiles
+     *   MilesToMeter
+     *   InchToCm
+     *   CmToInch
+     *   FootToYard
+     *   YardToFoot
+     *
+     *
+     * MassConverter
+     *
+     *   KgToPound
+     *   PoundToKg
+     *   TonToPound
+     *   PoundToTon
+     *   OunceToGram
+     *   GramToOunce
+     *
     */
 
-    UnitConverter myConverter = new DollarToEuroConverter();
-    double aLotOfDollars = 10000;
-    double aLotOfEuros = myConverter.convert(aLotOfDollars);
-    System.out.println(myConverter.toString() + " has converted " + aLotOfDollars + " USD to " + aLotOfEuros + " EUR!");
+    UnitConverter myConverter;
+
+    if(conversion == "DollarToEuro")
+      myConverter = new DollarToEuroConverter();
+    else
+      myConverter = new DollarToEuroConverter();
+
+    double valueToBeConverted = Double.parseDouble(value);
+    double convertedValue = myConverter.convert(valueToBeConverted);
+    
+    System.out.format(myConverter.toString(),valueToBeConverted, convertedValue);
   }
 }

@@ -7,7 +7,7 @@ public class DollarToEuroConverter extends UnitConverter
   }
 
   public String toString(){
-    return "Dollar to Euro Converter";
+    return "Dollar to Euro Converter has converted %.2f USD to %.2f EURO";
   }
 
   public void print(){
