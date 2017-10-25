@@ -1,18 +1,20 @@
 
 public class PoundToEuroConverter extends CurrencyConverter{
-	
-	public PoundToEuroConverter() { }
+		  
+	  public PoundToEuroConverter() {
+	        super("Pound", "Euro");
+	    }
 
-	  public double convert(double inPounds) {
-	    return inPounds*1.12;
-	  }
+	    @Override
+	    public double convert(double inPounds) {
+	        inputValue = inPounds;
+	        convertedValue = inPounds * 1.12;
+	        return convertedValue;
+	    }
 
-	  public String toString(){
-	    return "Pound to Euro Converter has converted %.2f Pound to %.2f Euro";
-	  }
-
-	  public void print(){
-	    System.out.println(toString());
-	  }
+	    @Override
+	    public String toString() {
+	        return "Pound to Euro Converter";
+	    }
 
 }
