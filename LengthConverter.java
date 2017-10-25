@@ -13,6 +13,6 @@ public abstract class LengthConverter extends UnitConverter {
 
     @Override
     public void print() {
-        System.out.format(toString() + " has converted %.2f %s to %.2f %s", inValue, sourceLengthName, outValue, destinationLengthName);
+        System.out.format(toString() + " has converted "+inValue+" %s to %.6f %s", sourceLengthName, outValue, destinationLengthName);
     }
 }

@@ -15,7 +15,7 @@ public abstract class MassConverter extends UnitConverter{
 
     @Override
     public void print() {
-        System.out.format(toString() + " has converted %.2f %s to %.2f %s", inputMass, inputMassUnit, covertedMass, convertedMassUnit);
+        System.out.format(toString() + " has converted "+inputMass+" %s to %.6f %s", inputMassUnit, covertedMass, convertedMassUnit);
     }
 
 }

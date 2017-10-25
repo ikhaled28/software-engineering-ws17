@@ -15,7 +15,7 @@ public abstract class CurrencyConverter extends UnitConverter{
 
     @Override
     public void print() {
-        System.out.format(toString() + " has converted %.2f %s to %.2f %s", inputValue, inputCurrencyName, convertedValue, convertedCurrencyName);
+        System.out.format(toString() + " has converted "+inputValue+" %s to %.6f %s", inputCurrencyName, convertedValue, convertedCurrencyName);
     }
 	
 }
