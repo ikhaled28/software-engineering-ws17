@@ -10,6 +10,11 @@ public class TestSuite {
   @Test public static void DETest2() {
     UnitConverter test = new DollarToEuroConverter();
     double result = test.convert(-1);
-    assertEquals(1,result,0.001);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void DETest3() {
+    UnitConverter test = new DollarToEuroConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
   }
 }

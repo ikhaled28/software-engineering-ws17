@@ -2,7 +2,7 @@ class Main {
   public static void main(String[] args)
   {
     String conversion = "DollarToEuro";
-    String value = "1000";
+    String value = "234";
 
     /*
      * TODO
@@ -45,9 +45,15 @@ class Main {
     else
       myConverter = new DollarToEuroConverter();
 
-    double valueToBeConverted = Double.parseDouble(value);
+    double valueToBeConverted = 0;
+    try {
+      valueToBeConverted = Double.parseDouble(value);
+    }catch (Exception e){
+      System.out.println("Wrong input value");
+    }
     double convertedValue = myConverter.convert(valueToBeConverted);
 
-    System.out.format(myConverter.toString(),valueToBeConverted, convertedValue);
+    //System.out.format(myConverter.toString(),valueToBeConverted, convertedValue);
+    myConverter.print();
   }
 }
