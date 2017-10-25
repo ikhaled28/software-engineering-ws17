@@ -2,19 +2,301 @@ import TinyTestJ.Test;
 import static TinyTestJ.Assert.*;
 
 public class TestSuite {
-  @Test public static void DETest1() {
+
+  //Dollar to Euro Test
+  @Test public static void DollarEuroTest1() {
     UnitConverter test = new DollarToEuroConverter();
     double result = test.convert(10000);
     assertEquals(8500,result,0.001);
   }
-  @Test public static void DETest2() {
+  @Test public static void DollarEuroTest2() {
     UnitConverter test = new DollarToEuroConverter();
     double result = test.convert(-1);
     assertEquals(-.85,result,0.001);
   }
-  @Test public static void DETest3() {
+  @Test public static void DollarEuroTest3() {
     UnitConverter test = new DollarToEuroConverter();
     double result = test.convert(-0);
     assertEquals(-0,result,0.001);
   }
+  //-------------------------------------------------
+
+  // Euro to Dollar Test
+  @Test public static void EuroDollarTest1() {
+    UnitConverter test = new EuroToDollarConverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void EuroDollarTest2() {
+    UnitConverter test = new EuroToDollarConverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void EuroDollarTest3() {
+    UnitConverter test = new EuroToDollarConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+
+  // Pound to Euro Test
+  @Test public static void PoundEuroTest1() {
+    UnitConverter test = new PoundToEuroConverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void PoundEuroTest2() {
+    UnitConverter test = new PoundToEuroConverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void PoundEuroTest3() {
+    UnitConverter test = new PoundToEuroConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+
+  // Euro to Pound Test
+  @Test public static void EuroPoundTest1() {
+    UnitConverter test = new EuroToPoundConverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void EuroPoundTest2() {
+    UnitConverter test = new EuroToPoundConverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void EuroPoundTest3() {
+    UnitConverter test = new EuroToPoundConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+
+
+
+  // Meter to Mile Test
+  @Test public static void MeterMileTest1() {
+    UnitConverter test = new MeterToMileConverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void MeterMileTest2() {
+    UnitConverter test = new MeterToMileConverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void MeterMileTest3() {
+    UnitConverter test = new MeterToMileConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+  // Mile to Meter Test
+  @Test public static void MileMeterTest1() {
+    UnitConverter test = new MileToMeterConverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void MileMeterTest2() {
+    UnitConverter test = new MileToMeterConverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void MileMeterTest3() {
+    UnitConverter test = new MileToMeterConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+  // Inch to Cm Test
+  @Test public static void InchCmTest1() {
+    UnitConverter test = new InchToCmConverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void InchCmTest2() {
+    UnitConverter test = new InchToCmConverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void InchCmTest3() {
+    UnitConverter test = new InchToCmConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+  // Cm to Inch Test
+  @Test public static void CmInchTest1() {
+    UnitConverter test = new CmToInchConverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void CmInchTest2() {
+    UnitConverter test = new CmToInchConverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void CmInchTest3() {
+    UnitConverter test = new CmToInchConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+  // Foot to Yard Test
+  @Test public static void FootYardTest1() {
+    UnitConverter test = new FootToYardConverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void FootYardTest2() {
+    UnitConverter test = new FootToYardConverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void FootYardTest3() {
+    UnitConverter test = new FootToYardConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+  // Yard to Foot Test
+  @Test public static void YardFootTest1() {
+    UnitConverter test = new YardToFootConverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void YardFootTest2() {
+    UnitConverter test = new YardToFootConverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void YardFootTest3() {
+    UnitConverter test = new YardToFootConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+
+
+
+
+  // Kilogram to Pound Test
+  @Test public static void KgPoundTest1() {
+    UnitConverter test = new KilogramToPoundConverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void KgPoundTest2() {
+    UnitConverter test = new KilogramToPoundConverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void KgPoundTest3() {
+    UnitConverter test = new KilogramToPoundConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+  // Pound to Kilogram Test
+  @Test public static void PoundKgTest1() {
+    UnitConverter test = new PoundToKilogramConverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void PoundKgTest2() {
+    UnitConverter test = new PoundToKilogramConverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void PoundKgTest3() {
+    UnitConverter test = new PoundToKilogramConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+  // Ton to Pound Test
+  @Test public static void TonPoundTest1() {
+    UnitConverter test = new TonToPoundConverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void TonPoundTest2() {
+    UnitConverter test = new TonToPoundConverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void TonPoundTest3() {
+    UnitConverter test = new TonToPoundConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+  // Pound to Ton Test
+  @Test public static void PoundTonTest1() {
+    UnitConverter test = new PoundToTonConverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void PoundTonTest2() {
+    UnitConverter test = new PoundToTonConverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void PoundTonTest3() {
+    UnitConverter test = new PoundToTonConverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+  // Ounce to Gram Test
+  @Test public static void OunceGramTest1() {
+    UnitConverter test = new OunceToGramCoverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void OunceGramTest2() {
+    UnitConverter test = new OunceToGramCoverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void OunceGramTest3() {
+    UnitConverter test = new OunceToGramCoverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
+
+  // Gram to Ounce Test
+  @Test public static void GramOunceTest1() {
+    UnitConverter test = new GramToOunceCoverter();
+    double result = test.convert(10000);
+    assertEquals(8500,result,0.001);
+  }
+  @Test public static void GramOunceTest2() {
+    UnitConverter test = new GramToOunceCoverter();
+    double result = test.convert(-1);
+    assertEquals(-.85,result,0.001);
+  }
+  @Test public static void GramOunceTest3() {
+    UnitConverter test = new GramToOunceCoverter();
+    double result = test.convert(-0);
+    assertEquals(-0,result,0.001);
+  }
+  //-------------------------------------------------
 }
