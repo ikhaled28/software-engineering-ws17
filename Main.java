@@ -19,8 +19,8 @@ class Main {
      *
      * LengthConverter
      *
-     *   MetersToMiles
-     *   MilesToMeter
+     *   MeterToMile
+     *   MileToMeter
      *   InchToCm
      *   CmToInch
      *   FootToYard
@@ -47,7 +47,7 @@ class Main {
 
     double valueToBeConverted = Double.parseDouble(value);
     double convertedValue = myConverter.convert(valueToBeConverted);
-    
+
     System.out.format(myConverter.toString(),valueToBeConverted, convertedValue);
   }
 }
