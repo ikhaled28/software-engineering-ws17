@@ -1,9 +1,12 @@
+import TinyTestJ.RunTests;
+
 class Main {
   public static void main(String[] args)
   {
-    String conversion = "GramToOunce";
-    String value = "1";
+    String conversion = "DollarToEuro";
+    String value = "1000";
 
+    
     /*
      * TODO
      *
@@ -37,6 +40,7 @@ class Main {
      *   GramToOunce
      *
     */
+    
 
     UnitConverter myConverter;
 
