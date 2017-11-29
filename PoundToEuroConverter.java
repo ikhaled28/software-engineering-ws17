@@ -16,5 +16,10 @@ public class PoundToEuroConverter extends CurrencyConverter{
 	    public String toString() {
 	        return "Pound to Euro Converter";
 	    }
+	    
+	    @Override
+		public UnitConverter Clone() {
+			return new PoundToEuroConverter();
+		}
 
 }

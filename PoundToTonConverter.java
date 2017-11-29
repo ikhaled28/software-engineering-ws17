@@ -16,4 +16,9 @@ public class PoundToTonConverter extends MassConverter {
 	public String toString() {
 		return "Pound to Ton Converter";
 	}
+	
+	@Override
+	public UnitConverter Clone() {
+		return new PoundToTonConverter();
+	}
 }

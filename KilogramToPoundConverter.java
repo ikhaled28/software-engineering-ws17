@@ -16,4 +16,9 @@ public class KilogramToPoundConverter extends MassConverter {
 	public String toString() {
 		return "Pound to Kilogram Converter";
 	}
+	
+	@Override
+	public UnitConverter Clone() {
+		return new KilogramToPoundConverter();
+	}
 }

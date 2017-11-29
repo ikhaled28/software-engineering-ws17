@@ -13,4 +13,9 @@ public class MileToMeterConverter extends LengthConverter {
     public String toString() {
         return "Mile to Meter Converter";
     }
+    
+    @Override
+	public UnitConverter Clone() {
+		return new MileToMeterConverter();
+	}
 }

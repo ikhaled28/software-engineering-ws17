@@ -14,4 +14,9 @@ public class InchToCmConverter extends LengthConverter {
     public String toString() {
         return "Inch to Centimeter Converter";
     }
+    
+    @Override
+	public UnitConverter Clone() {
+		return new InchToCmConverter();
+	}
 }

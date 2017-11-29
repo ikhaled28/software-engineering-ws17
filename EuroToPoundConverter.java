@@ -17,4 +17,9 @@ public class EuroToPoundConverter extends CurrencyConverter {
 	        return "Euro to Pound Converter";
 	    }
 
+		@Override
+		public UnitConverter Clone() {
+			return new EuroToPoundConverter();
+		}
+
 }

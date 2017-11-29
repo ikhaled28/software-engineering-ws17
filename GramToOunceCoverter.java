@@ -16,5 +16,10 @@ public class GramToOunceCoverter extends MassConverter {
 	public String toString() {
 		return "Gram to Ounce Converter";
 	}
+	
+	@Override
+	public UnitConverter Clone() {
+		return new GramToOunceCoverter();
+	}
 
 }

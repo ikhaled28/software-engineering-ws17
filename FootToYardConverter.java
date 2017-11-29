@@ -14,4 +14,9 @@ public class FootToYardConverter extends LengthConverter {
     public String toString() {
         return "Foot to Yard Converter";
     }
+    
+    @Override
+	public UnitConverter Clone() {
+		return new FootToYardConverter();
+	}
 }

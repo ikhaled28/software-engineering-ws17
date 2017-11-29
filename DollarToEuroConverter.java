@@ -15,4 +15,9 @@ public class DollarToEuroConverter extends CurrencyConverter
 	public String toString() {
 		return "Dollar to Euro Converter";
 	}
+
+	@Override
+	public UnitConverter Clone() {
+		return new DollarToEuroConverter();
+	}
 };

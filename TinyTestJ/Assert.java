@@ -17,6 +17,16 @@ public class Assert {
   public static void assertEquals(double expected, double actual, double delta) {
      assertEquals(null, expected, actual, delta);
   }
+  
+  public static void assertEquals(Object expected, Object actual){
+	  if((expected == null && actual != null) || (expected != null && actual == null))
+		  fail();
+	  else if(expected == null && actual == null) {
+		  
+	  }else if(!expected.getClass().equals(actual.getClass())) {
+		  fail("Class name mismatch!! Expected : " + expected.toString() + ", Actual : " + actual.toString());
+	  }
+  }
 
   // helper methods to format strings etc.
 

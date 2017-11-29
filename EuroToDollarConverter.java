@@ -17,4 +17,9 @@ public class EuroToDollarConverter extends CurrencyConverter{
 	      return "Euro to Dollar Converter";
 	  }
 
+	@Override
+	public UnitConverter Clone() {
+		return new EuroToDollarConverter();
+	}
+
 }

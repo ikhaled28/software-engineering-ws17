@@ -3,6 +3,121 @@ import static TinyTestJ.Assert.*;
 
 public class TestSuite {
 
+  //Converter Factory Test
+  @Test public static void ConverterFactoryTest1() {
+    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+	UnitConverter createdConverter = converterFactory.Create("DollarToEuro");
+	assertEquals(new DollarToEuroConverter(), createdConverter);
+  }		
+  @Test public static void ConverterFactoryTest2() {
+	ConverterFactory converterFactory = ConverterFactory.GetInstance();
+	UnitConverter createdConverter = converterFactory.Create("DollarToEurosss");
+	assertEquals(null, createdConverter);
+  }
+  
+  @Test public static void ConverterFactoryTest3() {
+	ConverterFactory converterFactory = ConverterFactory.GetInstance();
+	UnitConverter createdConverter = converterFactory.Create("");
+	assertEquals(null, createdConverter);
+  }
+  
+  @Test public static void ConverterFactoryTest4() {
+	ConverterFactory converterFactory = ConverterFactory.GetInstance();
+	UnitConverter createdConverter = converterFactory.Create(null);
+	assertEquals(null, createdConverter);
+  }	
+  
+  @Test public static void ConverterFactoryTest5() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("EuroToDoller");
+		assertEquals(new EuroToDollarConverter(), createdConverter);
+	  }
+  
+  @Test public static void ConverterFactoryTest6() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("PoundToEuro");
+		assertEquals(new PoundToEuroConverter(), createdConverter);
+	  }	
+  
+  @Test public static void ConverterFactoryTest7() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("EuroToPound");
+		assertEquals(new EuroToPoundConverter(), createdConverter);
+	  }	
+  
+  @Test public static void ConverterFactoryTest8() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("MeterToMile");
+		assertEquals(new MeterToMileConverter(), createdConverter);
+	  }
+  
+  @Test public static void ConverterFactoryTest9() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("MileToMeter");
+		assertEquals(new MileToMeterConverter(), createdConverter);
+	  }	
+  
+  @Test public static void ConverterFactoryTest10() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("InchToCm");
+		assertEquals(new InchToCmConverter(), createdConverter);
+	  }	
+  
+  @Test public static void ConverterFactoryTest11() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("CmToInch");
+		assertEquals(new CmToInchConverter(), createdConverter);
+	  }	
+  
+  @Test public static void ConverterFactoryTest12() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("FootToYard");
+		assertEquals(new FootToYardConverter(), createdConverter);
+	  }
+  
+  @Test public static void ConverterFactoryTest13() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("YardToFoot");
+		assertEquals(new YardToFootConverter(), createdConverter);
+	  }
+  
+  @Test public static void ConverterFactoryTest14() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("KilogramToPound");
+		assertEquals(new KilogramToPoundConverter(), createdConverter);
+	  }	
+  
+  @Test public static void ConverterFactoryTest15() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("PoundToKilogram");
+		assertEquals(new PoundToKilogramConverter(), createdConverter);
+	  }	
+  
+  @Test public static void ConverterFactoryTest16() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("TonToPound");
+		assertEquals(new TonToPoundConverter(), createdConverter);
+	  }	
+  
+  @Test public static void ConverterFactoryTest17() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("PoundToTon");
+		assertEquals(new PoundToTonConverter(), createdConverter);
+	  }	
+  
+  @Test public static void ConverterFactoryTest18() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("OunceToGram");
+		assertEquals(new OunceToGramCoverter(), createdConverter);
+	  }	
+  
+  @Test public static void ConverterFactoryTest19() {
+	    ConverterFactory converterFactory = ConverterFactory.GetInstance();
+		UnitConverter createdConverter = converterFactory.Create("GramToOunce");
+		assertEquals(new GramToOunceCoverter(), createdConverter);
+	  }	
+  
+	
   //Dollar to Euro Test
   @Test public static void DollarEuroTest1() {
     UnitConverter test = new DollarToEuroConverter();

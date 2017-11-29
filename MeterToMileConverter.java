@@ -15,5 +15,9 @@ public class MeterToMileConverter extends LengthConverter {
         return "Meter to Mile Converter";
     }
 
+    @Override
+	public UnitConverter Clone() {
+		return new MeterToMileConverter();
+	}
 
 }
