@@ -1,7 +1,7 @@
 class Main {
   public static void main(String[] args)
   {
-    String converterName = "DollarToEuroasd";
+    String converterName = "DollarToEuro";
     String value = "1000";
 
     
@@ -53,10 +53,12 @@ class Main {
     }
     
     double convertedValue = myConverter.convert(valueToBeConverted);
-    System.out.println(convertedValue);
-    myConverter.print();
+//    System.out.println(convertedValue);
+//    myConverter.print();
     
-    
+    UnitConverter temp = new EuroToDollarConverter(new EuroToDollarConverter(new PoundToEuroConverter()));
+    temp.convert(valueToBeConverted);
+    temp.print();
     
   }
 }

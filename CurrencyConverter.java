@@ -1,3 +1,4 @@
+import com.sun.tools.javah.Util;
 
 public abstract class CurrencyConverter extends UnitConverter{
 	
@@ -13,9 +14,27 @@ public abstract class CurrencyConverter extends UnitConverter{
         this.convertedValue = 0;
     }
 
+    public CurrencyConverter(CurrencyConverter baseConverter, String inputCurrencyName, String convertedCurrencyName){
+        this(inputCurrencyName, convertedCurrencyName);
+        this.baseConverter = baseConverter;
+        try {
+            if (baseConverter.convertedCurrencyName != inputCurrencyName) {
+                throw new IllegalTypeException(inputCurrencyName, baseConverter.convertedCurrencyName);
+            }
+        }catch (IllegalTypeException e){
+            System.out.println(e.getMessage());
+            System.exit(1);
+        }
+    }
+
     @Override
     public void print() {
-        System.out.format(toString() + " has converted "+inputValue+" %s to %.6f %s", inputCurrencyName, convertedValue, convertedCurrencyName);
+        if(baseConverter != null){
+            baseConverter.print();
+            System.out.print(" --> ");
+        }
+//        System.out.format(toString() + " : "+inputValue+" %s to %.6f %s", inputCurrencyName, convertedValue, convertedCurrencyName);
+        System.out.format(inputValue+" %s to %.6f %s", inputCurrencyName, convertedValue, convertedCurrencyName);
     }
 	
 }
