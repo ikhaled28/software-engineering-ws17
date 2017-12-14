@@ -48,7 +48,7 @@ public class Inversion extends UnitConverter{
 
 	@Override
 	public String toString() {
-		return "\nInversion : ";
+		return "Inversion : ";
 	}
 
 	@Override

@@ -14,14 +14,16 @@ class Main {
   public static void main(String[] args)
   {
     
-//    UnitConverter temp = new EuroToDollarConverter(new PoundToEuroConverter());
-//    temp.convert(valueToBeConverted);
-//    temp.print();
-    
-//    UnitConverter temp = new Inversion(new DollarToEuroConverter());
-//    temp.convert(valueToBeConverted);
-//    temp.print();
-    
+    UnitConverter poundToEuroToDollarConverter = new EuroToDollarConverter(new PoundToEuroConverter());
+      poundToEuroToDollarConverter.convert(1000);
+      System.out.println("Decorator Pattern Test------");
+      poundToEuroToDollarConverter.print();
+
+    UnitConverter invertedDollarToEuroConverter = new Inversion(new DollarToEuroConverter());
+      invertedDollarToEuroConverter.convert(1000);
+      System.out.println("\nInversion Test------");
+      invertedDollarToEuroConverter.print();
+      System.out.println();
     
     Scanner scanner = new Scanner(System.in);
     DisplayMenu();
