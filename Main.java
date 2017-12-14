@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -9,7 +9,7 @@ class Main {
 			"MeterToMile", "MileToMeter", "InchToCm", "CmToInch", "FootToYard", "YardToFoot", 
 			"KilogramToPound", "PoundToKilogram", "TonToPound", "PoundToTon", "OunceToGram", "GramToOunce");
 	static List<String> illegalInversions = Arrays.asList("MeterToMile", "MileToMeter", "InchToCm", "CmToInch", "FootToYard", "YardToFoot");
-    static List<Command> commandList = new ArrayList<>();
+    static LinkedList<Command> commandList = new LinkedList<>();
 
   public static void main(String[] args)
   {
