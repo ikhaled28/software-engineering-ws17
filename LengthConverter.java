@@ -10,9 +10,37 @@ public abstract class LengthConverter extends UnitConverter {
         this.inValue = 0;
         this.outValue = 0;
     }
+    
+    public LengthConverter(LengthConverter baseConverter, String sourceLengthName, String destinationLengthName){
+        this(sourceLengthName, destinationLengthName);
+        this.baseConverter = baseConverter;
+        try {
+            if (baseConverter.destinationLengthName != sourceLengthName) {
+                throw new IllegalTypeException(sourceLengthName, baseConverter.destinationLengthName);
+            }
+        }catch (IllegalTypeException e){
+            System.out.println(e.getMessage());
+            System.exit(1);
+        }
+    }
+    
+    @Override 
+    public String GetInputUnit(){
+    		return this.sourceLengthName;
+    }
+    
+    @Override
+    public String GetOutputUnit() {
+    		return this.destinationLengthName;
+    }
 
     @Override
     public void print() {
-        System.out.format(toString() + " has converted "+inValue+" %s to %.6f %s", sourceLengthName, outValue, destinationLengthName);
+    		if(baseConverter != null){
+			baseConverter.print();
+			System.out.print(" --> ");
+    		}
+//        System.out.format(toString() + " has converted "+inValue+" %s to %.6f %s", sourceLengthName, outValue, destinationLengthName);
+        System.out.format(inValue + " %s to %.6f %s", sourceLengthName, outValue, destinationLengthName);
     }
 }

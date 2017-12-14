@@ -5,8 +5,14 @@ public class PoundToKilogramConverter extends MassConverter {
 		super("Pound", "Kilogram");
 	}
 
+	public PoundToKilogramConverter(MassConverter baseConverter) {
+		super(baseConverter, "Pound", "Kilogram");
+	}
 	@Override
 	public double convert(double inPounds) {
+		if(baseConverter != null){
+			inPounds = baseConverter.convert(inPounds);
+		}
 		inputMass = inPounds;
 		covertedMass = inPounds * 0.453592;
 		return covertedMass;

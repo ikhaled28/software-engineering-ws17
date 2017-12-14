@@ -4,9 +4,15 @@ public class GramToOunceCoverter extends MassConverter {
 	public GramToOunceCoverter() {
 		super("Gram", "Ounce");
 	}
+	public GramToOunceCoverter(MassConverter baseConverter) {
+		super(baseConverter, "Gram", "Ounce");
+	}
 
 	@Override
 	public double convert(double inGrams) {
+		if(baseConverter != null){
+			inGrams = baseConverter.convert(inGrams);
+		}
 		inputMass = inGrams;
 		covertedMass = inGrams * 0.035274;
 		return covertedMass;

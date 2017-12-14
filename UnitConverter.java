@@ -8,7 +8,15 @@ public abstract class UnitConverter
   
   public UnitConverter Clone() {
 	return null;
-}
+  }
+  
+  public String GetInputUnit() {
+	  return "";
+  }
+  
+  public String GetOutputUnit() {
+	  return "";
+  }
 
 }
 
@@ -21,4 +29,14 @@ class IllegalTypeException extends Exception{
     super("\nIllegal type found while chaining ( Expected : "+expected+", Found : "+found+"). Program terminating...");
   }
 }
+
+class IllegalInversionException extends Exception{
+	  public IllegalInversionException(){
+	    super("\nIllegal type found for inversion. Program terminating...");
+	  }
+	  
+	  public IllegalInversionException(String className){
+		    super("\nIllegal type found for inversion. "+className+" not supported. Program terminating...");
+		  }
+	}
 

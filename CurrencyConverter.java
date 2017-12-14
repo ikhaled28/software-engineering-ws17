@@ -1,5 +1,3 @@
-import com.sun.tools.javah.Util;
-
 public abstract class CurrencyConverter extends UnitConverter{
 	
 	protected String inputCurrencyName;
@@ -26,7 +24,17 @@ public abstract class CurrencyConverter extends UnitConverter{
             System.exit(1);
         }
     }
-
+    
+    @Override 
+    public String GetInputUnit(){
+    		return this.inputCurrencyName;
+    }
+    
+    @Override
+    public String GetOutputUnit() {
+    		return this.convertedCurrencyName;
+    }
+    
     @Override
     public void print() {
         if(baseConverter != null){
