@@ -19,6 +19,10 @@ class Main {
       System.out.println("Decorator Pattern Test------");
       poundToEuroToDollarConverter.print();
 
+      /*---------
+      For Inversion we selected LengthConverter subclasses as a special case which doesn't work with inversion,
+      as we don't have TemperatureConverter.
+      ----------*/
     UnitConverter invertedDollarToEuroConverter = new Inversion(new DollarToEuroConverter());
       invertedDollarToEuroConverter.convert(1000);
       System.out.println("\nInversion Test------");
