@@ -4,38 +4,15 @@ import java.util.List;
 import java.util.Scanner;
 
 class Main {
-	public enum CommandType{
-		BASIC, CHAIN, INVERT, INVALID
-	}
 	static String flashMessage = "";
 	static List<String> conversionNames = Arrays.asList("DollarToEuro","EuroToDoller", "PoundToEuro", "EuroToPound",
 			"MeterToMile", "MileToMeter", "InchToCm", "CmToInch", "FootToYard", "YardToFoot", 
 			"KilogramToPound", "PoundToKilogram", "TonToPound", "PoundToTon", "OunceToGram", "GramToOunce");
 	static List<String> illegalInversions = Arrays.asList("MeterToMile", "MileToMeter", "InchToCm", "CmToInch", "FootToYard", "YardToFoot");
+    static List<Command> commandList = new ArrayList<>();
+
   public static void main(String[] args)
   {
-    String converterName = "DollarToEuro";
-    String value = "1000";
-
-    
-    
-    UnitConverter myConverter = ConverterFactory.GetInstance().Create(converterName);
-    if(myConverter == null) {
-    		System.out.println("Wrong input given as converter name. Terminating...");
-    		return;
-    }
-    
-    double valueToBeConverted = 0;
-    try {
-      valueToBeConverted = Double.parseDouble(value);
-    }catch (Exception e){
-      System.out.println("Wrong input value. Terminating...");
-      return;
-    }
-    
-    double convertedValue = myConverter.convert(valueToBeConverted);
-//    System.out.println(convertedValue);
-//    myConverter.print();
     
 //    UnitConverter temp = new EuroToDollarConverter(new PoundToEuroConverter());
 //    temp.convert(valueToBeConverted);
@@ -53,42 +30,34 @@ class Main {
     		ProcessInput(input);
     		System.out.println("\n"+flashMessage+"\n");
     		flashMessage = "";
+            DisplayCurrentCommands();
     		DisplayMenu();
     }
-    System.out.println("Done");
+    System.out.println("Executing command list...");
+
+    ConverterFactory factory = ConverterFactory.GetInstance();
+    for(int i = 0 ; i < commandList.size(); i++){
+        commandList.get(i).Execute(factory);
+    }
   }
   
   static void ProcessInput(String input) {
-	  GetCommandType(input);
+	  Command command = GetCommand(input);
+      if(command != null)
+          commandList.add(command);
   }
   
-  static CommandType GetCommandType(String input) {
+  static Command GetCommand(String input) {
 	  String[] words = input.split(" ");
-	  if(words.length < 2 || words.length > 3) {
-		  flashMessage = "ERROR : Wrong input format!!! Please notice the input formats given in the menu.";
-		  return CommandType.INVALID;
-	  }else if(words.length == 2){
-		  boolean isValid = IsValidConversionName(words[0]) && IsNumberInput(words[1]);
-		  if(isValid)
-			  flashMessage = "Command added successfully.";
-		  return (isValid)?CommandType.BASIC : CommandType.INVALID;
-	  }else if(words.length == 3) {
-		  boolean isValid = false;
-		  CommandType type = CommandType.INVALID;
-		  if(words[0] == "invert") {
-			  isValid = IsValidConversionName(words[1]) && !IsIllegalInversion(words[1]) && IsNumberInput(words[2]);
-			  type = (isValid) ? CommandType.INVERT : CommandType.INVALID;
-		  }
-		  else {
-			  isValid = IsValidConversionName(words[0]) && IsValidConversionName(words[1]) && IsNumberInput(words[2]);
-			  type = (isValid) ? CommandType.CHAIN : CommandType.INVALID;
-		  }
-		  if(isValid)
-			  flashMessage = "Command added successfully.";
-		  return type;
-	  }else {
-		  return CommandType.INVALID;
-	  }
+      if(words.length != 2){
+          flashMessage = "ERROR : Wrong input format!!! Please notice the input formats given in the menu.";
+          return null;
+      }else{
+          boolean isValid = IsValidConversionName(words[0]) && IsNumberInput(words[1]);
+          if(isValid)
+            flashMessage = "Command added successfully.";
+          return (isValid)?new Command(input, words[0], Double.parseDouble(words[1])) : null;
+      }
   }
   
   static boolean IsNumberInput(String data) {
@@ -122,10 +91,18 @@ class Main {
 	  System.out.println("MeterToMile \tMileToMeter \tInchToCm \tCmToInch \tFootToYard \tYardToFoot");
 	  System.out.println("KilogramToPound \tPoundToKilogram \tTonToPound \tPoundToTon \tOunceToGram \tGramToOunce");
 	  System.out.println("---------------------------------------");
-	  System.out.println("\n# Input formats : ");
-	  System.out.println("- Basic conversion : [conversion_name] [value_to_be_converted] (e.g. DollarToEuro 1000)");
-	  System.out.println("- Chain conversion : [conversion_name] [conversion_name] [value_to_be_converted] (e.g. DollarToEuro EuroToPound 1000)");
-	  System.out.println("- Invert conversion : invert [conversion_name] [value_to_be_converted] (e.g. invert DollarToEuro 1000)");
-	  System.out.println("\n\nEnter your command : ");
+	  System.out.println("\n# Input format : ");
+	  System.out.println("[conversion_name] [value_to_be_converted] (e.g. DollarToEuro 1000)");
+	  System.out.println("\n\nEnter your command (Ctrl+d to exit entry mode) : ");
+  }
+
+  static void DisplayCurrentCommands(){
+      if(commandList.size() > 0) {
+          System.out.println("Current command list : ");
+          for (int i = 0; i < commandList.size(); i++) {
+            System.out.println("\033[34m"+commandList.get(i).GetActualCommand());
+          }
+          System.out.println("\033[30m");
+      }
   }
 }
