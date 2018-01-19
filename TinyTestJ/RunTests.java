@@ -19,7 +19,12 @@ public class RunTests {
         }
       }
     }
-    System.out.printf("Tests: passed: %d, failed %d.\n", passed, failed);
+    if(failed != 0) {
+        System.out.printf("Test failed");    
+    }else {
+    		System.out.printf("Test Passed");
+    }
+    //System.out.printf("Tests: passed: %d, failed %d.\n", passed, failed);
   }
 }
 

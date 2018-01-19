@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Converter.makejar" default="makejar" basedir=".">
+	
+    <target name="RunTests">
+        <java classname="TinyTestJ.RunTests" classpath="." output="output.txt">
+        </java>
+    </target>
+	
+	<target name="CheckTests" depends="RunTests">
+	    <condition property="TestResult" value="true" else="false">
+	         <filesmatch file1="output.txt"
+	                     file2="input.txt"/>
+	    </condition>
+	</target>
+	
+  	<target name ="makejar" depends="CheckTests" if="TestResult">
+   		 <jar jarfile="Converter.jar" includes="*.class" basedir=".">
+    			<manifest>
+        			<attribute name="Main-Class" value="Main" />
+    			</manifest>
+    		</jar>
+  	</target>
+  
+</project>
+
+<!-- https://stackoverflow.com/questions/6282542/ant-how-to-compare-contents-of-two-files -->

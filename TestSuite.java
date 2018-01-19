@@ -159,12 +159,12 @@ public class TestSuite {
   @Test public static void PoundEuroTest1() {
     UnitConverter test = new PoundToEuroConverter();
     double result = test.convert(10000);
-    assertEquals(11200,result,0.001);
+    assertEquals(11236,result,0.001);
   }
   @Test public static void PoundEuroTest2() {
     UnitConverter test = new PoundToEuroConverter();
     double result = test.convert(-1);
-    assertEquals(-1.12,result,0.001);
+    assertEquals(-1.1236,result,0.001);
   }
   @Test public static void PoundEuroTest3() {
     UnitConverter test = new PoundToEuroConverter();
