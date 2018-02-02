@@ -12,7 +12,8 @@ public abstract class CurrencyConverter extends UnitConverter{
         this.convertedValue = 0;
     }
 
- // Exception Handling For Assignment 7
+ //Exception Handling For Assignment 7 : Checking Exception For Illegal type for Currency Conversion
+
     public CurrencyConverter(CurrencyConverter baseConverter, String inputCurrencyName, String convertedCurrencyName){
         this(inputCurrencyName, convertedCurrencyName);
         this.baseConverter = baseConverter;

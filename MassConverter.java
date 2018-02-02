@@ -13,7 +13,8 @@ public abstract class MassConverter extends UnitConverter{
         this.covertedMass = 0;
     }
     
- // Exception Handling For Assignment 7
+//Exception Handling For Assignment 7 : Checking Exception For Illegal type for Mass Conversion
+    
     public MassConverter(MassConverter baseConverter, String inputMassUnit, String convertedMassUnit){
         this(inputMassUnit, convertedMassUnit);
         this.baseConverter = baseConverter;

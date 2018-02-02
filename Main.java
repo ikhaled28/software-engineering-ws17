@@ -65,7 +65,7 @@ class Main {
           return (isValid)?new Command(input, words[0], Double.parseDouble(words[1])) : null;
       }
   }
-  
+  // Exception Handling For Assignment 7 : Checking Exception For Getting The Number From Command
   static boolean IsNumberInput(String data) {
 	  try {
 		  double valueToBeConverted = Double.parseDouble(data);
@@ -75,14 +75,14 @@ class Main {
 	      return false;
 	  }
   }
-  
+  // Exception Handling For Assignment 7 : Checking Exception For Illegal conversion name!!!
   static boolean IsValidConversionName(String conversion) {
 	  boolean isValid = conversionNames.contains(conversion);
 	  if(!isValid)
 		  flashMessage += "ERROR : Illegal conversion name!!! Please notice the accepted conversion names in the menu";
 	  return isValid;
   }
-  
+  // Exception Handling For Assignment 7 : Checking Exception For Illegal conversion name for inverted conversion!!!
   static boolean IsIllegalInversion(String conversion) {
 	  boolean illegal = illegalInversions.contains(conversion);
 	  if(illegal)

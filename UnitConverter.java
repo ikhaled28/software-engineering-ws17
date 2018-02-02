@@ -20,18 +20,18 @@ public abstract class UnitConverter
 
 }
 
-// Exception Handling For Assignment 7
+// Exception Handling For Assignment 7 : Checking Exception For Illegal type found while chaining
 
 class IllegalTypeException extends Exception{
   public IllegalTypeException(){
     super("\nIllegal type found while chaining . Program terminating...");
   }
-
+//Exception Handling For Assignment 7 : Checking Exception For Illegal type found while chaining
   public IllegalTypeException(String expected, String found){
     super("\nIllegal type found while chaining ( Expected : "+expected+", Found : "+found+"). Program terminating...");
   }
 }
-
+//Exception Handling For Assignment 7 : Checking Exception For Illegal type for Inversion
 class IllegalInversionException extends Exception{
 	  public IllegalInversionException(){
 	    super("\nIllegal type found for inversion. Program terminating...");
