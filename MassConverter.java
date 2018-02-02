@@ -12,7 +12,8 @@ public abstract class MassConverter extends UnitConverter{
         this.inputMass = 0;
         this.covertedMass = 0;
     }
-
+    
+ // Exception Handling For Assignment 7
     public MassConverter(MassConverter baseConverter, String inputMassUnit, String convertedMassUnit){
         this(inputMassUnit, convertedMassUnit);
         this.baseConverter = baseConverter;

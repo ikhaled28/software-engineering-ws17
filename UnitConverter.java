@@ -20,6 +20,8 @@ public abstract class UnitConverter
 
 }
 
+// Exception Handling For Assignment 7
+
 class IllegalTypeException extends Exception{
   public IllegalTypeException(){
     super("\nIllegal type found while chaining . Program terminating...");

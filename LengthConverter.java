@@ -10,7 +10,8 @@ public abstract class LengthConverter extends UnitConverter {
         this.inValue = 0;
         this.outValue = 0;
     }
-    
+ 
+    // Exception Handling For Assignment 7
     public LengthConverter(LengthConverter baseConverter, String sourceLengthName, String destinationLengthName){
         this(sourceLengthName, destinationLengthName);
         this.baseConverter = baseConverter;
